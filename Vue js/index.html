@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VUE JS</title>
+    <style>
+        h2 {
+            display: inline;
+            margin-right: 10px;
+        }
+
+        h2 span {
+            margin: 0 10px;
+        }
+
+        button {
+            color: #fff;
+            background-color: #007bff;
+            border-color: #007bff;
+            font-weight: 400;
+            text-align: center;
+            padding: .375rem .75rem;
+            outline: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div>
+            <input v-model="placeHolder" />
+            <input v-model="placeHolder" />
+            <h4>{{placeHolder}}</h4>
+        </div>
+        <div>
+            <h2>Counter :<span>{{counter}}</span>щельков </h2>
+            <button type="button" @click="counter++">count</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data() {
+                return {
+                    placeHolder: 'Начальное значение',
+                    counter: 0
+                };
+            },
+            methods: {
+                count: function () {
+
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

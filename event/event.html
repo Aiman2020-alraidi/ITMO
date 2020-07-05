@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title>Создание событий</title><meta charset="utf-8">
+   <style>#writer {width: 50%; height:100px; background: gold; cursor: pointer}
+          #reader {width: 50%; height:100px; background: red} body {display: flex}</style>
+ </head>
+ <body>
+    <div id="writer" title="♥️"><h2>Отправитель события</h2></div>
+    <div id="reader" title="⭐️"><h2>Получатель события</h2></div>
+    <script>
+      document.querySelector('#reader')
+      .addEventListener('note', e => {
+        e.target.textContent += e.target.title
+        document.querySelector('#writer').dispatchEvent(new CustomEvent('noteback'))
+      });
+      document.querySelector('#writer')
+      .addEventListener('click', function (){
+        document.querySelector('#reader').dispatchEvent(new CustomEvent('note'))
+      });
+
+      document.querySelector('#writer')
+      .addEventListener('noteback', function (){
+        this.textContent += this.title
+      })
+    
+
+      // Левый компонент посылает правому по щелчку событие "note", 
+      //на которое правый компонент реагирует добавлением звезды в своей текст. 
+    // Сделайте форк этой страницы и доработайте пример так, чтобы
+    // Правый компонент посылал левому ответ на сигнал "note" (например, "noteback")
+    // Левый компонент реагировал на этот сигнал добавлением содержимого своего 
+    //атрибута title в свой текст
+
+    </script>
+ </body>
+</html>
+
